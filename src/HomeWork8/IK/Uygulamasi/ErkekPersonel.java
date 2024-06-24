@@ -1,3 +1,5 @@
+package HomeWork8.IK.Uygulamasi;
+
 import java.time.LocalDate;
 
 public class ErkekPersonel extends Personel{

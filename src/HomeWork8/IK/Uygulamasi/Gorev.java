@@ -1,3 +1,5 @@
+package HomeWork8.IK.Uygulamasi;
+
 public class Gorev {
     private String gorevTanimi;
     private boolean tamamlandiMi;
