@@ -3,17 +3,15 @@ package HomeWork8.IK.Uygulamasi;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Personel {
-    private String ad;
-    private String soyad;
-    private LocalDate dogumTarihi;
-    protected int emeklilikYasi;
+public abstract class Personel {
+    protected String ad;
+    protected String soyad;
+    protected LocalDate dogumTarihi;
 
-    public Personel(String ad, String soyad, LocalDate dogumTarihi, int emeklilikYasi) {
+    public Personel(String ad, String soyad, LocalDate dogumTarihi) {
         this.ad = ad;
         this.soyad = soyad;
         this.dogumTarihi = dogumTarihi;
-        this.emeklilikYasi = emeklilikYasi;
     }
 
     public String getAd() {
@@ -28,10 +26,6 @@ public class Personel {
         return dogumTarihi;
     }
 
-    public int getEmeklilikYasi() {
-        return emeklilikYasi;
-    }
-
     public void setAd(String ad) {
         this.ad = ad;
     }
@@ -44,14 +38,5 @@ public class Personel {
         this.dogumTarihi = dogumTarihi;
     }
 
-    public void EmeklilikHesapla() {
-        Period period = Period.between(dogumTarihi, LocalDate.now());
-        int yas = period.getYears();
-
-        if (yas >= emeklilikYasi) {
-            System.out.println(ad + " = Emeklilik Yaşınız Gelmiştir.");
-        } else {
-            System.out.println(ad + " = Emekliliğe Kalan Yıl = " + (emeklilikYasi - yas));
-        }
-    }
+    public abstract void EmeklilikHesapla();
 }
